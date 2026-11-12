@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>フェムケア導入ガイドLP</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* 画像を縦につなげた1カラムLP（最大幅 520px）。導入事例レポートLPと同じピンク系。フォームは2ステップ・7項目 */
+:root{
+  --bg:#fff7f7; --band:#f9dde2; --pink:#e89aa8; --rose:#c4566e; --rose-d:#a8435a; --ink:#4a3b3d; --sub:#8a7276; --line:#efd3d8; --white:#ffffff;
+  --f:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:15px;line-height:1.8;letter-spacing:.02em}
+.page{max-width:520px;margin:0 auto;background:var(--bg)}
+.preview{background:var(--band);color:var(--sub);font-size:11px;text-align:center;padding-block:6px}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-block:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line);background:var(--white)}
+.logo{font-weight:500;font-size:13px;color:var(--ink);letter-spacing:.06em}
+.logo small{display:block;font-size:9px;letter-spacing:.1em;color:var(--sub);font-weight:400}
+.h-cta{font-size:12px;color:var(--rose);text-decoration:none;border:1px solid var(--rose);border-radius:999px;padding:6px 14px;white-space:nowrap}
+.blk img{display:block;width:100%;height:auto}
+
+.cta-wrap{padding-block:22px 30px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));text-align:center;display:grid;gap:8px;justify-items:center}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:440px;background:var(--rose);color:var(--white);text-decoration:none;font-family:var(--f);font-size:17px;font-weight:700;letter-spacing:.08em;padding:18px 20px;border:0;border-radius:999px;cursor:pointer;box-shadow:0 6px 0 var(--rose-d)}
+.cta::after{content:"";width:8px;height:8px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+.cta:active{transform:translateY(3px);box-shadow:0 3px 0 var(--rose-d)}
+.cta:focus-visible,.h-cta:focus-visible,input:focus-visible,select:focus-visible,.chip input:focus-visible+span{outline:2px solid var(--ink);outline-offset:3px}
+.cta-sub{font-size:12px;color:var(--sub);margin:0}
+.cta-sub b{color:var(--rose);font-weight:500}
+
+.form-sec{background:var(--band);padding-bottom:36px}
+form{margin-left:max(16px,env(safe-area-inset-left,0px));margin-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px;background:var(--white);padding:24px 18px;border-radius:16px}
+.step{display:grid;gap:14px}
+.step-h{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px}
+.step-h span{font-size:11px;letter-spacing:.12em;color:var(--white);background:var(--rose);border-radius:999px;padding:2px 10px;font-weight:500}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:block;text-align:center;padding:12px 6px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:14px}
+.chip input:checked+span{background:var(--rose);border-color:var(--rose);color:var(--white);font-weight:500}
+.field{display:grid;gap:6px}
+.field label,.lab{font-size:13px;font-weight:500}
+.req{font-style:normal;font-size:10px;color:var(--white);background:var(--rose);padding:1px 7px;border-radius:999px;margin-left:8px;vertical-align:2px;font-weight:400}
+input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;font-size:16px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);appearance:none}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--rose) 50%),linear-gradient(135deg,var(--rose) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat}
+.gate{border:1px solid var(--rose);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.7;background:var(--bg)}
+.gate b{color:var(--rose)}
+.err{font-size:12px;color:var(--rose-d);margin:0}
+.note{font-size:11px;color:var(--sub);line-height:1.7;margin:0;text-align:center}
+.thanks{margin-left:16px;margin-right:16px;background:var(--white);border-radius:16px;text-align:center;padding:32px 16px}
+.thanks h3{margin:0;font-size:19px;font-weight:500;color:var(--rose)}
+.thanks p{margin:10px 0 0;font-size:13px;color:var(--sub)}
+
+footer{padding-block:24px 110px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));font-size:12px;color:var(--sub)}
+footer p{margin:0 0 6px}
+
+.fix{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(255,247,247,.94);backdrop-filter:blur(6px);border-top:1px solid var(--line);padding-top:10px;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.fix .cta{margin:0 auto;padding:14px 18px;font-size:16px;max-width:460px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<div class="page">
+  <div class="preview">確認用プレビュー（フォームは送信されません）</div>
+  <header>
+    <div class="logo">フェムケア新メニュー導入ガイド<small>FROM NOW INTERNATIONAL</small></div>
+    <a class="h-cta" href="#form">ガイドを受け取る</a>
+  </header>
+
+  <main>
+    <div class="blk"><img src="img/01.jpg" width="900" height="1350" alt="サロン経営者様へ無料プレゼント。新しいメニューで、客単価を上げたいと思っていませんか？サロンの客単価を上げる フェムケア新メニュー導入ガイド（無料PDF・全8ページ）。全国650店以上で導入、導入実績1,000台突破"></div>
+    <div class="cta-wrap">
+      <a class="cta" href="#form">ガイドを無料で受け取る</a>
+      <p class="cta-sub">入力1分・<b>このページで完結</b>します</p>
+    </div>
+
+    <div class="blk"><img src="img/02.jpg" width="900" height="1151" alt="中身を、少しだけお見せします。CASE 1.5ヶ月で売上約130万円、利用回数約300回、次回予約率94%。SIMULATION 1日◯回で、月いくら？"></div>
+    <div class="blk"><img src="img/03.jpg" width="900" height="1350" alt="ガイドでわかること。P.3 今のメニューへの足し方3パターン、P.5 最初の1ヶ月でやること、P.6 フェムケアマシンの選び方7つのチェック、P.7 1.5ヶ月で売上約130万円、導入店の事例。A4・全8ページ"></div>
+    <div class="cta-wrap">
+      <a class="cta" href="#form">早見表の答えを見る</a>
+      <p class="cta-sub">1日の回数ごとの月の売上がわかります</p>
+    </div>
+    <div class="blk"><img src="img/04.jpg" width="900" height="433" alt="実機を試したい方へ。インストラクターがサロンにお伺いする無料お試しレンタル（約3時間）を実施中です。ガイドをお読みいただいたあと、ご希望の方だけご案内します。※長期の貸し出しではありません"></div>
+
+    <section class="form-sec" id="form">
+      <div class="blk"><img src="img/05.jpg" width="900" height="600" alt="2ステップで、すぐ受け取れます。ご入力のメールアドレスにすぐお届けします"></div>
+      <form id="dl" novalidate>
+        <div class="step">
+          <div class="step-h"><span>STEP 1</span>業態を選んでください<em class="req">必須</em></div>
+          <div class="chips" role="radiogroup" aria-label="業態">
+            <label class="chip"><input type="radio" name="type" value="エステサロン" required><span>エステサロン</span></label>
+            <label class="chip"><input type="radio" name="type" value="美容クリニック"><span>美容クリニック</span></label>
+            <label class="chip"><input type="radio" name="type" value="整体・整骨院"><span>整体・整骨院</span></label>
+            <label class="chip"><input type="radio" name="type" value="ジム・その他"><span>ジム・その他</span></label>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-h"><span>STEP 2</span>お届け先を入力してください</div>
+          <div class="field"><label for="f-org">サロン・店舗名<em class="req">必須</em></label><input type="text" id="f-org" name="org" autocomplete="off" required></div>
+          <div class="field"><label for="f-name">お名前<em class="req">必須</em></label><input type="text" id="f-name" name="name" autocomplete="off" required></div>
+          <div class="field"><label for="f-mail">メールアドレス<em class="req">必須</em></label><input type="email" id="f-mail" name="mail" autocomplete="off" required></div>
+          <div class="field"><label for="f-tel">電話番号<em class="req">必須</em></label><input type="tel" id="f-tel" name="tel" inputmode="tel" autocomplete="off" required></div>
+          <div class="field"><label for="f-pref">店舗の都道府県<em class="req">必須</em></label>
+            <select id="f-pref" name="pref" required><option value="">選択してください</option></select></div>
+          <div class="field"><label for="f-status">営業状況<em class="req">必須</em></label>
+            <select id="f-status" name="status" required><option value="">選択してください</option><option>営業中</option><option>開業準備中</option></select></div>
+        </div>
+        <p class="gate">本ガイドは<b>サロン・クリニックなど事業者さま向け</b>の資料です。施術のご予約や、個人でのご購入はお受けしていません。</p>
+        <p class="err" id="err" hidden>未入力の項目があります。すべての項目をご入力ください。</p>
+        <button class="cta" type="submit" style="max-width:none">ガイドを無料で受け取る</button>
+        <p class="note">いただいた情報は資料のお届けとご連絡に利用します。</p>
+      </form>
+      <div class="thanks" id="thanks" hidden>
+        <h3>お申し込みありがとうございます</h3>
+        <p>ご入力のメールアドレスにガイドをお送りしました。<br>（確認用プレビューのため、実際には送信されていません）</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>運営：株式会社FROM NOW INTERNATIONAL</p>
+    <p>※掲載数値は導入サロンの一例であり、成果を保証するものではありません。</p>
+  </footer>
+</div>
+
+<div class="fix" id="fix"><a class="cta" href="#form">ガイドを無料で受け取る</a></div>
+
+<script>
+const prefs="北海道 青森県 岩手県 宮城県 秋田県 山形県 福島県 茨城県 栃木県 群馬県 埼玉県 千葉県 東京都 神奈川県 新潟県 富山県 石川県 福井県 山梨県 長野県 岐阜県 静岡県 愛知県 三重県 滋賀県 京都府 大阪府 兵庫県 奈良県 和歌山県 鳥取県 島根県 岡山県 広島県 山口県 徳島県 香川県 愛媛県 高知県 福岡県 佐賀県 長崎県 熊本県 大分県 宮崎県 鹿児島県 沖縄県".split(' ');
+const ps=document.getElementById('f-pref'); prefs.forEach(p=>{const o=document.createElement('option');o.textContent=p;ps.appendChild(o)});
+const f=document.getElementById('dl');
+f.addEventListener('submit',e=>{
+  e.preventDefault();
+  const typeOk=!!f.querySelector('input[name=type]:checked');
+  const ok=typeOk && [...f.querySelectorAll('input[type=text],input[type=email],input[type=tel],select')].every(el=>el.value.trim()!=='');
+  document.getElementById('err').hidden=ok;
+  if(!ok)return;
+  f.hidden=true;document.getElementById('thanks').hidden=false;
+});
+const fix=document.getElementById('fix');
+new IntersectionObserver(es=>es.forEach(x=>{fix.hidden=x.isIntersecting}),{threshold:0.02}).observe(document.getElementById('form'));
+</script>
+
+</body>
+</html>
